@@ -1,4 +1,6 @@
 def display_result(participants_names):
+    print('Первый день:', participants_names)
+    return participants_names
     """
     Выводим список имён участников в первый день
 
@@ -12,6 +14,11 @@ def display_result(participants_names):
 
 
 def get_participants_names(names):
+    names_list = ['Артемий', 'Борис', 'Влад', 'Гоша', 'Дима', 'Евгений', 'Женя', 'Захар']
+    participants_names = []
+    for i in range(0, len(names_list) - 1, 2):
+        participants_names.append(names_list[i])
+    return participants_names
     """
     Получаем элементы списка только с чётными индексами.
 
