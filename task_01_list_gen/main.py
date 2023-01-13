@@ -1,5 +1,6 @@
 def get_input_parameters():
     number= int(input('Введите целое число: '))
+    return number
     """
     Получаем N
 
@@ -12,8 +13,8 @@ def get_input_parameters():
     pass
 
 def display_result(odd_numbers):
-    print('', odd_numbers)
-    #return odd_numbers
+    print('список нечётных чисел:', odd_numbers)
+    return odd_numbers
     """
     Выводим список нечётных чисел
 
@@ -30,6 +31,7 @@ def get_odd_numbers(number):
     for i in range(1, number + 1):
         if i % 2 == 1:
             odd_number.append(i)
+    return odd_number
     """
     Получаем отсортированный по возрастанию список
     нечётных чисел от 1 до number.
@@ -46,7 +48,7 @@ def get_odd_numbers(number):
     #  Функция на вход принимает ранее полученные данные
     #  (из функции get_input_parameters).
     #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    #  который будет передан в функцию display_result
     pass
 
 
