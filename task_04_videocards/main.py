@@ -1,4 +1,11 @@
 def get_input_parameters():
+    old_video_cards = []
+    quantity_video_cards = int(input('Кол-во видеокарт: '))
+    for i in range(quantity_video_cards):
+        id_video_cards = int(input(f"{i + 1} Видеокарта: "))
+        old_video_cards.append((id_video_cards))
+
+    return old_video_cards
     """
     Получаем список видеокарт
 
@@ -12,6 +19,9 @@ def get_input_parameters():
 
 
 def display_result(old_video_cards, new_video_cards):
+    print('Старый список  видеокарт: ', ",".join(map(str, old_video_cards)))
+    print('Новый список видеокарт: ', ",".join(map(str, new_video_cards)))
+    return
     """
     Выводим список оставшихся видеокарт
 
@@ -27,6 +37,13 @@ def display_result(old_video_cards, new_video_cards):
 
 
 def select_video_cards(video_cards):
+    result = []
+    if video_cards:
+        ma = max(video_cards)
+        for card in video_cards:
+            if card < ma:
+                result.append(card)
+    return result
     """
     Удаляем из списка видеокарт наибольшие элементы.
 
@@ -50,4 +67,4 @@ if __name__ == '__main__':
     # вызов функций get_input_parameters и display_result
     video_cards = get_input_parameters()  # получаем параметры
     result_video_cards = select_video_cards(video_cards)  # удаляет наибольшие элементы.
-    display_result(video_cards, result_video_cards)  # выводим результат
+    display_result(video_cards, result_video_cards)  # выводим результатs
