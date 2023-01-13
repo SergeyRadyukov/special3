@@ -1,4 +1,9 @@
 def get_input_parameters():
+    res_cells = []
+    for i in range(int(input('Количество клеток: '))):
+        cell = int(input(f'Эффективность {i + 1} клетки: '))
+        res_cells.append(cell)
+    return res_cells
     """
     Получаем набор клеток
 
@@ -12,6 +17,9 @@ def get_input_parameters():
 
 
 def display_result(cells):
+    print(f'Неподходящие значения: ', end='')
+    print(*cells)
+    return
     """
     Выводим список клеток у которых значение меньше индекса
 
@@ -25,6 +33,11 @@ def display_result(cells):
 
 
 def select_cells(cells):
+    result = []
+    for i in range(len(cells)):
+        if cells[i] <= i:
+            result.append(cells[i])
+    return result
     """
     Отбираем список клеток, у которых значение меньше индекса.
 
