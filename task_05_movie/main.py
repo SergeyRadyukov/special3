@@ -1,4 +1,11 @@
 def get_input_parameters():
+    favorite_films = []
+    number = int(input('Сколько фильмов хотите добавить? '))
+    for i in range(number):
+        movie = input('Введите название фильма: ')
+        if movie != available_films:
+            favorite_films.append(movie)
+    return favorite_films
     """
     Получаем список фильмов, которые пользователь хочет добавить в "любимые"
 
@@ -12,6 +19,8 @@ def get_input_parameters():
 
 
 def display_result(favorite_films, errors):
+    print(f'список любимых фильмов: {", ".join(favorite_films)}')
+    print(f'список ненайденных фильмов: {", ".join(errors)}')
     """
     Выводим список ошибок и список любимых фильмов
 
@@ -27,6 +36,8 @@ def display_result(favorite_films, errors):
 
 
 def add_favorite_film(new_favorite_films, available_films):
+    return [i for i in new_favorite_films if i in available_films], \
+        [i for i in new_favorite_films if i not in available_films]
     """
     Добавляем фильмы в список "любимых".
 
