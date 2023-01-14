@@ -1,4 +1,6 @@
 def get_input_parameters():
+    word = input('Введите слово: ')
+    return word
     """
     Получаем входное слово
 
@@ -10,8 +12,9 @@ def get_input_parameters():
     #  Логику расчётов тут не программируем
     pass
 
-
 def display_result(number_unique_letters):
+    print('Колличество уникальных букв: ', number_unique_letters)
+    return
     """
     Выводим количество уникальных букв в слове
 
@@ -23,8 +26,16 @@ def display_result(number_unique_letters):
     #  Логику расчётов тут не программируем
     pass
 
-
 def count_number_unique_letters(word):
+    number_unique_letters = 0
+    for letter in word:
+        count = 0
+        for i in word:
+            if letter == i:
+                count += 1
+        if count == 1:
+            number_unique_letters += 1
+    return number_unique_letters
     """
     Считаем количество уникальных букв в слове.
 
