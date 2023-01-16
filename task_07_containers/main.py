@@ -1,4 +1,15 @@
 def get_input_parameters():
+    number = int(input('Кол-во контейнеров: '))
+    list_container_weights = []
+    for i in range(number):
+        while True:
+            weight = int(input('Введите вес ' + str(i + 1) + ' контейнера: '))
+            if weight <= 200:
+                break
+        list_container_weights.append(weight)
+    list_container_weights.sort(reverse=True)
+    new_container_weight = int(input('Введите вес нового контейнера: '))
+    return list_container_weights, new_container_weight
     """
     Получаем список весов контейнеров и вес нового контейнера
     Незабываем проверит данные: все числа целые и не превышают 200.
@@ -14,6 +25,8 @@ def get_input_parameters():
 
 
 def display_result(serial_number_new_container):
+    print('Номер, куда встанет новый контейнер:', serial_number_new_container)
+    return
     """
     Выводим порядковый номер нового контейнера.
 
@@ -27,6 +40,12 @@ def display_result(serial_number_new_container):
 
 
 def search_serial_number_new_container(list_container_weights, new_container_weight):
+    serial_number_new_container = []
+    for c in range(len(list_container_weights)):
+        serial_number_new_container = c + 1
+        if list_container_weights[c] < new_container_weight:
+            break
+    return serial_number_new_container
     """
     Ищем куда вставим новый контейнер.
 
