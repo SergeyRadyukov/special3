@@ -23,7 +23,6 @@ def get_input_parameters():
     #  Логику расчётов тут не программируем
     pass
 
-
 def display_result(serial_number_new_container):
     print('Номер, куда встанет новый контейнер:', serial_number_new_container)
     return
