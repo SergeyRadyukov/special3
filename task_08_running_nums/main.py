@@ -1,4 +1,15 @@
 def get_input_parameters():
+    original_list = []
+    n = int(input('Количество элементов: '))
+    shift = int(input('Сдвиг: '))
+    for i in range(n):
+        print('Введите', i + 1, 'элемент списка: ', end=' ')
+        numbers = int(input())
+        original_list.append(numbers)
+    print('Сдвиг:', shift)
+    print('Изначальный список:', original_list)
+
+    return shift, original_list
     """
     Получаем сдвиг и начальны список
 
@@ -12,6 +23,8 @@ def get_input_parameters():
 
 
 def display_result(shifted_list):
+    print('Сдвинутый список: ', shifted_list)
+    return
     """
     Выводим получившиеся список
 
@@ -25,6 +38,12 @@ def display_result(shifted_list):
 
 
 def shift_list(shift, original_list):
+    shifted_list = []
+    for _ in range(shift):
+        original_list.insert(0, original_list.pop())
+    shifted_list.extend(original_list)
+
+    return shifted_list
     """
     Сдвигаем список на определённое количество элементов в право
 
