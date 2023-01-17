@@ -1,4 +1,6 @@
 def get_input_parameters():
+    word = input('Введите слово: ')
+    return word
     """
     Получаем входное слово
 
@@ -12,6 +14,12 @@ def get_input_parameters():
 
 
 def display_result(is_palindrome):
+    if is_palindrome == True:
+        print('Слово является палиндромом')
+    else:
+        print('Слово не является палиндромом')
+
+    return
     """
     Выводим информацию является ли строка палиндромом
 
@@ -25,6 +33,12 @@ def display_result(is_palindrome):
 
 
 def check_palindrome(word):
+    is_palindrome = True
+    word = list(word)
+    for i in range(len(word)):
+        if word[i] != word[-i - 1]:
+            is_palindrome = False
+    return is_palindrome
     """
     Проверяем является ли слово палиндромом.
 
