@@ -1,4 +1,7 @@
 def get_input_parameters():
+    original_list = [1, 4, -3, 0, 10]
+    print('Изначальный список:', original_list)
+    return original_list
     """
     Получаем неотсортированный список чисел
 
@@ -12,6 +15,8 @@ def get_input_parameters():
 
 
 def display_result(sorted_list):
+    print('Отсортированный список:', sorted_list)
+    return
     """
     Выводим отсортированный список
 
@@ -25,6 +30,12 @@ def display_result(sorted_list):
 
 
 def sort_list(original_list):
+    for current_element in range(len(original_list) - 1):
+        for i in range(len(original_list) - 1 - current_element):
+            if original_list[i] > original_list[i + 1]:
+                original_list[i], original_list[i + 1] = original_list[i + 1], original_list[i]
+
+    return original_list
     """
     Сортируем список
 
