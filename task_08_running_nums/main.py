@@ -6,7 +6,6 @@ def get_input_parameters():
         print('Введите', i + 1, 'элемент списка: ', end=' ')
         numbers = int(input())
         original_list.append(numbers)
-    print('Сдвиг:', shift)
     print('Изначальный список:', original_list)
 
     return shift, original_list
@@ -23,6 +22,7 @@ def get_input_parameters():
 
 
 def display_result(shifted_list):
+    print('Сдвиг:', shift)
     print('Сдвинутый список: ', shifted_list)
     return
     """
